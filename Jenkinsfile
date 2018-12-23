@@ -24,13 +24,9 @@ stages{
         }
 
 	  stage ('Copy artifact'){
-            parallel{
-                stage ('Deploy to Staging'){
-                    steps {
-                        echo 'copying artifact'
+            steps {
+                echo 'copying artifact'
 		    	bat "xcopy .\webapp\target\*.war D:/Softwares/DevOpsTraining/artifact"
-                    }
-                }
             }
         }
 	
