@@ -30,12 +30,6 @@ stages{
                         bat "pscp -i D:/Softwares/DevOpsTraining/tomcat-demo.ppk 'C:/Program Files (x86)/Jenkins/workspace/aws-automated/webapp/target/webapp.war' ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
                     }
                 }
-
-                stage ("Deploy to Production"){
-                    steps {
-                        bat "pscp -i D:/Softwares/DevOpsTraining/tomcat-demo.ppk 'C:/Program Files (x86)/Jenkins/workspace/aws-automated/webapp/target/webapp.war' ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
-                    }
-                }
             }
         }
     }
