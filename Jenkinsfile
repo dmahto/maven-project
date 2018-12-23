@@ -26,7 +26,7 @@ stages{
 	  stage ('Copy artifact'){
             steps {
                 echo 'copying artifact'
-		    	bat "xcopy './webapp/target/*.war' D:/Softwares/DevOpsTraining/artifact"
+		    	bat "xcopy ./webapp/target/*.war D:/Softwares/DevOpsTraining/artifact/"
             }
         }
 	
