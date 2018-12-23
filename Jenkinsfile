@@ -27,7 +27,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "echo y | pscp -i D:/Softwares/DevOpsTraining/tomcat-demo.ppk D:/Softwares/DevOpsTraining/art/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat/webapps/"
+                        bat "echo y | pscp -i D:/Softwares/DevOpsTraining/tomcat-demo.ppk D:/Softwares/DevOpsTraining/art/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat/webapps"
                     }
                 }
             }
