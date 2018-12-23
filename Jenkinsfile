@@ -18,7 +18,7 @@ stages{
             post {
                 success {
                     echo 'Now Archiving...'
-                    archiveArtifacts artifacts: '**/target/*.war'
+                    archiveArtifacts artifacts: 'D:/Softwares/DevOpsTraining/*.war'
                 }
             }
         }
@@ -27,7 +27,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat 'echo y | pscp -i D:/Softwares/DevOpsTraining/tomcat-demo.ppk "C:/Program Files (x86)/Jenkins/workspace/aws-automated/webapp/target/webapp.war" ec2-user@${params.tomcat_dev}:/var/lib/tomcat/webapps/'
+                        bat "echo y | pscp -i D:/Softwares/DevOpsTraining/tomcat-demo.ppk 'D:/Softwares/DevOpsTraining/*.war' ec2-user@${params.tomcat_dev}:/var/lib/tomcat/webapps/"
                     }
                 }
             }
